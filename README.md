@@ -113,3 +113,24 @@ install `http-proxy` - used inside `next-dev-ssl.js`
 add `"start-secure": "node scripts/next-dev-ssl.js & next dev -p 3001"` to `package.json` `scripts`.
 
 Now start the app with `npm run start-secure` and navigate to the site on localhost on iPhone simulator or at your computers ip address and port 3000 on your phone. You will need to accept the warnings about it not being a verifiable cert to get past it.
+
+---
+
+### How to use this starter and start a new project without being tied to the original repo
+
+1. Clone the Repository
+
+```git clone https://github.com/EduardCRadd/next.js-project-starter.git```
+
+2. Create a New Repository on Github
+
+
+3. Change the Remote URL
+```
+git remote rm origin
+git remote add origin https://github.com/your-username/new-repository.git
+```
+
+4. Push to the New Repository
+
+```git push -u origin main```
