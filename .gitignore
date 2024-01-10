@@ -37,8 +37,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# webstorm
-/.idea
+# JetBrains IDEs
+.history
+.idea
+
+.vscode
+.nvmrc
 
 # iCloud generated files
 *.icloud
@@ -51,3 +55,7 @@ next-env.d.ts
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+
+# Local https server
+localhost-key.pem
+localhost.pem

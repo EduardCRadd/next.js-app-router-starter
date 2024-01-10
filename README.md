@@ -82,3 +82,34 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
         ```
 
 - `swr` is a React hooks library for data fetching. The name `swr` is derived from stale-while-revalidate, a HTTP cache invalidation strategy. It allows components to fetch data and, if the data changes, update in real-time. `swr` offers features like automatic revalidation (refetching), focus tracking, and local mutation. This improves the performance and user experience of web applications.
+
+---
+
+### Local https server for testing webshare api
+
+From [this link](https://web.dev/how-to-use-local-https/)
+
+```sh
+brew install mkcert
+brew install nss # if you use Firefox
+```
+
+Then
+
+```sh
+mkcert -install
+```
+
+`cd` to the root of the app and run
+
+```sh
+mkcert localhost
+```
+
+You should now have `localhost-key.pem` and `localhost.pem` file in the root of the project.
+
+install `http-proxy` - used inside `next-dev-ssl.js`
+
+add `"start-secure": "node scripts/next-dev-ssl.js & next dev -p 3001"` to `package.json` `scripts`.
+
+Now start the app with `npm run start-secure` and navigate to the site on localhost on iPhone simulator or at your computers ip address and port 3000 on your phone. You will need to accept the warnings about it not being a verifiable cert to get past it.

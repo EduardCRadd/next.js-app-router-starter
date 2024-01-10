@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start-secure": "node scripts/next-dev-ssl.js & next dev -p 3001"
   },
   "dependencies": {
     "@mantine/core": "^7.3.1",
@@ -20,6 +21,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "gsap": "^3.12.3",
+    "http-proxy": "^1.18.1",
     "i18next": "^23.7.8",
     "jquery": "^3.7.1",
     "lodash": "^4.17.21",
