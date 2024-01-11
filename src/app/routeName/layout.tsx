@@ -1,7 +1,7 @@
 // 'use client'
 
 import type { Metadata } from 'next'
-import React from 'react'
+import React, { FC } from 'react'
 
 import Footer from '@/components/footer/Footer'
 
@@ -10,7 +10,12 @@ export const metadata: Metadata = {
   title: 'Tab Title - Route',
   description: 'Route description',
 }
-export default function routeNameLayout({ children }: { children: React.ReactNode }) {
+
+type Props = {
+  children: React.ReactNode
+}
+
+const RouteLayout: FC<Props> = ({ children }) => {
   return (
     <>
       {children}
@@ -18,3 +23,5 @@ export default function routeNameLayout({ children }: { children: React.ReactNod
     </>
   )
 }
+
+export default RouteLayout

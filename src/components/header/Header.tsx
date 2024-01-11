@@ -1,5 +1,7 @@
+'use client'
+
 import classNames from 'classnames'
-import React, { FC } from 'react'
+import React, { type FC } from 'react'
 
 import styles from '@/components/header/header.module.scss'
 

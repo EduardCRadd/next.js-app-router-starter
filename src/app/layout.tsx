@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import localFont from 'next/font/local'
 import Head from 'next/head'
-import React from 'react'
+import React, { type FC } from 'react'
 
 import Header from '@/components/header/Header'
 
@@ -54,7 +54,11 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+type Props = {
+  children: React.ReactNode
+}
+
+const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html lang="en">
       {/* SEO */}
@@ -79,3 +83,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
+
+export default RootLayout
