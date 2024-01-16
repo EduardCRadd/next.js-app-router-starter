@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "prettier -check . && next lint --cache .",
+    "lint:fix": "prettier --write . && next lint --cache --fix .",
     "start-secure": "node scripts/next-dev-ssl.js & next dev -p 3001"
   },
   "dependencies": {
