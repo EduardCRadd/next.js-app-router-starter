@@ -1,17 +1,17 @@
 'use client'
 
-import classNames from 'classnames'
 import React, { type FC } from 'react'
+import Link from 'next/link'
 
-import styles from '@/components/header/header.module.scss'
-
-type Props = {}
+interface Props {}
 
 const Header: FC<Props> = ({}) => {
   return (
-    <section className={classNames('relative w-full h-[300px]', styles.header)}>
-      <div className={classNames('absolute top-12 left-1/2 w-32 h-14', styles.main_box)}>
-        <p className={classNames('', styles.paragraph)}>header</p>
+    <section className="w-full h-28 font-serif bg-color-brand">
+      <div className="relative top-10 mx-auto w-fit p-4 bg-color-bg">
+        <Link href="/" className="text-blue-500 text-3xl">
+          header
+        </Link>
       </div>
     </section>
   )

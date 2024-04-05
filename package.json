@@ -11,6 +11,7 @@
     "start-secure": "node scripts/next-dev-ssl.js & next dev -p 3001"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
     "@mantine/core": "^7.3.1",
     "@mantine/hooks": "^7.3.1",
     "@svgr/webpack": "^8.1.0",
@@ -23,17 +24,16 @@
     "gsap": "^3.12.3",
     "http-proxy": "^1.18.1",
     "i18next": "^23.7.8",
-    "jquery": "^3.7.1",
     "lodash": "^4.17.21",
     "next": "14.0.3",
     "next-i18next": "^15.1.1",
-    "nodemailer": "^6.9.7",
+    "nodemailer": "^6.9.13",
     "prettier": "^3.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^13.5.0",
-    "sass": "^1.69.5",
     "swr": "^2.2.4",
+    "tailwind-variants": "^0.2.1",
     "whatwg-fetch": "^3.6.19"
   },
   "devDependencies": {

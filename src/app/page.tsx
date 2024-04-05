@@ -1,24 +1,29 @@
 'use client'
 
-import classNames from 'classnames'
+import Link from 'next/link'
 import React, { type FC } from 'react'
 
-import styles from '@/app/page.module.scss'
-
-type Props = {}
+interface Props {}
 
 const HomePage: FC<Props> = ({}) => {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <div className={classNames('absolute top-0 left-0 h-[200px] w-[100px] bg-black', styles.test_bg)}>
-        <p>body local font - tailwind overwritten by .scss</p>
+    <main className="flex min-h-screen flex-col items-center p-24 gap-10">
+      <div className="absolute top-0 left-0 h-[200px] w-[100px] bg-blue-500">
+        <p>body local font</p>
+        <p>body local font</p>
       </div>
 
-      <a href="/routeName" className={classNames('', styles.a_test)}>
+      <Link href="/routeName/" className="underline underline-offset-4 font-sans">
         Local font
-      </a>
+      </Link>
 
-      <p className="roboto-bold">Google font</p>
+      <p className="font-roboto font-bold">Google font</p>
+
+      <Link
+        href="/recipies/"
+        className="decoration-0 text-2xl font-serif transition-all duration-300 bg-purple-600 border-2 active:border-4 hover:border-purple-500 border-purple-400 p-2">
+        Ready to use Components
+      </Link>
     </main>
   )
 }

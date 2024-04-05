@@ -1,4 +1,4 @@
-import '@/styles/globals.scss'
+import '@/styles/globals.css'
 
 import classNames from 'classnames'
 import type { Metadata } from 'next'
@@ -15,16 +15,20 @@ const roboto = Roboto({
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',
+  preload: true,
+  variable: '--font-roboto',
 })
 
 // Local Fonts
 const HelveticaRegular = localFont({
   src: '../../public/fonts/HelveticaNeue-Regular.otf',
+  preload: true,
   variable: '--helvetica-regular',
 })
 
 const RecoletaRegular = localFont({
   src: '../../public/fonts/Recoleta-Regular.otf',
+  preload: true,
   variable: '--recoleta-regular',
 })
 
@@ -54,7 +58,7 @@ export const metadata: Metadata = {
   },
 }
 
-type Props = {
+interface Props {
   children: React.ReactNode
 }
 
@@ -66,7 +70,7 @@ const RootLayout: FC<Props> = ({ children }) => {
         <meta
           data-n-head="ssr"
           name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+          content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=1"
         />
         <meta charSet="UTF-8" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -76,7 +80,14 @@ const RootLayout: FC<Props> = ({ children }) => {
         <meta name="twitter:image" content="https://www.eduardcradd.com/images/ogImage.webp" />
       </Head>
 
-      <body className={classNames(HelveticaRegular.variable, RecoletaRegular.variable, '')}>
+      {/*Set the base font/color on the body*/}
+      <body
+        className={classNames(
+          'w-full h-full bg-color-bg text-color-text font-sans',
+          roboto.variable,
+          HelveticaRegular.variable,
+          RecoletaRegular.variable,
+        )}>
         <Header /> {/* Header component visible on all routes */}
         {children}
       </body>

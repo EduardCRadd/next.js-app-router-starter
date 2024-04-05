@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Route description',
 }
 
-type Props = {
+interface Props {
   children: React.ReactNode
 }
 

@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'typography';
 
 :root {
   font-size: 16px;
@@ -23,19 +22,12 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
   font-weight: normal;
   font-style: normal;
   scroll-behavior: smooth;
   height: 100%;
   width: 100%;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--helvetica-regular);
 }
 
 p {
@@ -54,7 +46,7 @@ ol {
   text-decoration: none;
 }
 
-// Remove scroll bar
+/*Remove scroll bar*/
 ::-webkit-scrollbar {
   display: none;
   width: 6px;
@@ -64,7 +56,7 @@ ol {
   background-color: transparent;
 }
 
-// Text highlight settings
+/*Text highlight settings*/
 ::selection {
   background: white;
   color: var(--color-bg);
