@@ -1,24 +1,20 @@
-'use client'
+"use client"
 
-import { Dialog, Transition } from '@headlessui/react'
-import React, { type FC, Fragment, useEffect, useState } from 'react'
-
-import { PlayIcon } from '@/components/Icons/Play'
+import { Dialog, Transition } from "@headlessui/react"
+import React, { type FC, Fragment, useEffect, useState } from "react"
 
 interface Props {
   isOpen: boolean
   onClose: () => void
+  icon: React.ReactNode
+  title: string
+  description: string
+  buttonText: string
 }
 
-const DialogModal: FC<Props> = ({ isOpen, onClose }) => {
-  const [open, setOpen] = useState(isOpen)
-
-  useEffect(() => {
-    setOpen(isOpen)
-  }, [isOpen])
-
+const DialogModal: FC<Props> = ({ isOpen, onClose, icon, title, description, buttonText }) => {
   return (
-    <Transition.Root show={open} as={Fragment}>
+    <Transition.Root show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
         {/*Backdrop*/}
         <Transition.Child
@@ -45,16 +41,14 @@ const DialogModal: FC<Props> = ({ isOpen, onClose }) => {
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                 <div>
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                    <PlayIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
+                    {icon}
                   </div>
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
-                      Payment successful
+                      {title}
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.
-                      </p>
+                      <p className="text-sm text-gray-500">{description}</p>
                     </div>
                   </div>
                 </div>
@@ -63,7 +57,7 @@ const DialogModal: FC<Props> = ({ isOpen, onClose }) => {
                     type="button"
                     className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     onClick={onClose}>
-                    Go back to dashboard
+                    {buttonText}
                   </button>
                 </div>
               </Dialog.Panel>
