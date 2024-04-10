@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
-import React, { type FC } from 'react'
+import Link from "next/link"
+import React, { type FC } from "react"
 
 interface Props {}
 

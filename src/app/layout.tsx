@@ -7,7 +7,7 @@ import localFont from "next/font/local"
 import Head from "next/head"
 import React, { type FC } from "react"
 
-import Header from "@/components/header/Header"
+import Navigation from "@/components/header/Navigation"
 
 // Google Fonts
 const roboto = Roboto({
@@ -88,7 +88,7 @@ const RootLayout: FC<Props> = ({ children }) => {
           HelveticaRegular.variable,
           RecoletaRegular.variable,
         )}>
-        <Header /> {/* Header component visible on all routes */}
+        <Navigation /> {/* Header component visible on all routes */}
         {children}
       </body>
     </html>

@@ -1,6 +1,6 @@
-'use client'
+"use client"
 
-import { type FC, HTMLAttributes } from 'react'
+import { type FC, HTMLAttributes } from "react"
 
 interface Props extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   onClick?: () => any

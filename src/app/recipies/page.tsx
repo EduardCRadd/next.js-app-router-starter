@@ -2,6 +2,9 @@
 
 import React, { type FC, useState } from "react"
 
+import Accordion from "@/components/accordion/Accordion"
+import AccordionChakra from "@/components/accordion/AccordionChakra"
+import AccordionFlowbite from "@/components/accordion/AccordionFlowbite"
 import Switch from "@/components/button/Switch"
 import { PlayIcon } from "@/components/Icons/Play"
 import DialogModal from "@/components/overlays/modal/DialogModal"
@@ -21,7 +24,7 @@ const RouteHomePage: FC<Props> = ({}) => {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center gap-10 p-24">
+    <main className="flex min-h-screen flex-col items-center gap-10 p-24 py-[400px]">
       {/*Modal*/}
       <DialogModal
         isOpen={isModalOpen}
@@ -39,10 +42,15 @@ const RouteHomePage: FC<Props> = ({}) => {
       </button>
 
       {/*Switch*/}
-      <Switch enabled={switchEnabled} onChange={handleSwitchChange} size="small" />
+      <Switch enabled={switchEnabled} onChange={handleSwitchChange} size="small" switchRing={true} />
       <Switch enabled={switchEnabled} onChange={handleSwitchChange} />
-      <Switch enabled={switchEnabled} onChange={handleSwitchChange} size="medium" switchRing={true} />
+      <Switch enabled={switchEnabled} onChange={handleSwitchChange} size="macOS" switchRing={true} switchIcon={true} />
       <Switch enabled={switchEnabled} onChange={handleSwitchChange} size="large" switchRing={true} />
+      <Switch enabled={switchEnabled} onChange={handleSwitchChange} size="macOS" />
+
+      <Accordion />
+      <AccordionFlowbite />
+      <AccordionChakra />
     </main>
   )
 }
